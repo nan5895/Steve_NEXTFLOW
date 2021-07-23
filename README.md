@@ -73,7 +73,7 @@ vagrant init $VM
 vagrant up
 vagrant ssh
 ```
-***Note.if you have error when you do `vagrant up` you need to allow access vagrant-manager on your MAC by go to `system preferences` > `Security & Privacy` > `General`***
+***Note.if you have error when you do `vagrant up` you need to allow access vagrant-manager on your MAC by visiting  `system preferences` > `Security & Privacy` > `General`***
 
 Finally, you can check up your singularity Version through
 
