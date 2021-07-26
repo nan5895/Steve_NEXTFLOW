@@ -94,11 +94,11 @@ you can check your docker version by
 docker -v
 ```
 
-### Docker command
+### Docker Basic
 
 **Here are some several commands that you might use frequently**
 
-- `docker ps` it will display all container list in docker daemon socket. Sometime, you get error (i.e. Got permission denied while trying to connect to the Docker....etc) this mean that the user has not permission to access this docker socket. if you have super user access you can use `sudo` to access this. 
+- `docker ps`: it will display all container list in docker daemon socket. Sometime, you get error (i.e. Got permission denied while trying to connect to the Docker....etc) this mean that the user has not permission to access this docker socket. if you have super user access you can use `sudo` to access this. 
   ```
   $ docker ps
   CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
@@ -108,3 +108,30 @@ docker -v
   $ sudo usermod -aG docker $USERNAME
   $ sudo su - $USERNAME
   ```
+- Lets pull example image (`centos`) to run container. in docker you can pull image by using command `docker pull Image_name` 
+  ```
+  $ docker pull centose
+  Using default tag: latest
+  latest: Pulling from library/centos
+  8a29a15cefae: Pull complete
+  Digest: sha256:fe8d824220415eed5477b63addf40fb06c3b049404242b31982106ac204f6700
+  Status: Downloaded newer image for centos:latest
+  docker.io/library/centos:latest
+  ```
+  you check pulled images through the command `docker images`
+  ``` 
+  $docker images
+  REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+  centos              latest              470671670cac        8 weeks ago         237MB
+  ```
+
+**To process docker container, you need to do 2 step**
+  1. from the docker resitorire, you need to pull docker image and download the image at locak
+  2. through downloaded image, operatethe container. 
+
+- To operate docker container, you can use `docker run` to operate container. Here i added option `-it` to run the shell.
+  ```
+  $ docker run -it centos:latest bash
+  [root@d3fef9c0f9e9 /]#
+  ```
+- 
