@@ -134,4 +134,4 @@ docker -v
   $ docker run -it centos:latest bash
   [root@d3fef9c0f9e9 /]#
   ```
-- 
+  you can exit the opreated centOS shell by using command `exit`
